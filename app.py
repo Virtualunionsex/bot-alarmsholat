@@ -8,6 +8,7 @@ bot = telepot.Bot('1267590625:AAHJV6vU6Q5KxMBs6CAYcehsshNp1s56h9I') # <-- Ganti 
 response = bot.getUpdates()
 
 print ('Memulai..')
+now = datetime.datetime.now()
 time = now.strftime("%H:%M")
 bot.sendMessage ('@JadwalSholatJakarta', str(time))
 
