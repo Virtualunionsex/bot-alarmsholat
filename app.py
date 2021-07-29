@@ -9,9 +9,6 @@ response = bot.getUpdates()
 
 print ('Memulai..')
 now = datetime.datetime.now()
-time = now.strftime("%H:%M")
-bot.sendMessage ('@JadwalSholatJakarta', str(time))
-
 
 while True:
     
@@ -26,16 +23,12 @@ while True:
     Isya = TabelWaktu.find_all('td')[5].get_text()
     now = datetime.datetime.now()
     jam = now.strftime("%H:%M")
-    #okeh = "17:"
-    #print(jam)
     
     NShubuh = "Waktu Shubuh hari ini :" + Shubuh
     NDzuhur = "Waktu Dzuhur hari ini :" + Dzuhur
     NAshar = "Waktu Ashar hari ini :" + Ashar
     NMaghrib = "Waktu Maghrib hari ini :" + Maghrib
     NIsya = "Waktu Isya hari ini :" + Isya
-    
-    #print(NShubuh)
     
     if jam == Shubuh :
         print("Shubuh")
@@ -57,9 +50,5 @@ while True:
         print("Isya")
         bot.sendMessage ('@JadwalSholatJakarta', str(" Waktunya Sholat Isya!"))
         bot.sendMessage ('@JadwalSholatJakarta', str(NIsya))
-
-#     elif jam == okeh :
-#         print("test")
-#         bot.sendMessage ('@JadwalSholatJakarta', str(" test"))
 
     time.sleep(60) # <-- interval waktu setiap 1x looping saat scraping web. dalam detik. semakin sedikit waktu loopingnya semakin akurat, tetapi semakin berat kerja dari koding.
