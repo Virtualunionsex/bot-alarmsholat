@@ -25,7 +25,7 @@ while True:
     Isya = TabelWaktu.find_all('td')[5].get_text()
     now = datetime.datetime.now()
     jam = now.strftime("%H:%M")
-    okeh = "16:10"
+    okeh = "16:25"
     #print(jam)
     
     NShubuh = "Waktu Shubuh hari ini :" + Shubuh
