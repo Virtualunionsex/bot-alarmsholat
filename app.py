@@ -2,14 +2,14 @@ from bs4 import BeautifulSoup
 import requests # tadinya pake urllib, tetapi raspberry pi tidak bisa install library urllib
 import telepot
 import time, datetime
-from pprint import pprint
 
 URL = 'http://jadwalsholat.pkpu.or.id/' # ini alamat URL yang menyediakan jadwal sholat realtime, kita akan scraping page ini
 bot = telepot.Bot('1267590625:AAHJV6vU6Q5KxMBs6CAYcehsshNp1s56h9I') # <-- Ganti String value dengan token dari telegram bot / BotFather
 response = bot.getUpdates()
 
-pprint(response)
 print ('Memulai..')
+time = now.strftime("%H:%M")
+bot.sendMessage ('@JadwalSholatJakarta', str(time))
 
 
 while True:
@@ -25,7 +25,7 @@ while True:
     Isya = TabelWaktu.find_all('td')[5].get_text()
     now = datetime.datetime.now()
     jam = now.strftime("%H:%M")
-    okeh = "16:25"
+    #okeh = "17:"
     #print(jam)
     
     NShubuh = "Waktu Shubuh hari ini :" + Shubuh
@@ -57,8 +57,8 @@ while True:
         bot.sendMessage ('@JadwalSholatJakarta', str(" Waktunya Sholat Isya!"))
         bot.sendMessage ('@JadwalSholatJakarta', str(NIsya))
 
-    elif jam == okeh :
-        print("test")
-        bot.sendMessage ('@JadwalSholatJakarta', str(" test"))
+#     elif jam == okeh :
+#         print("test")
+#         bot.sendMessage ('@JadwalSholatJakarta', str(" test"))
 
     time.sleep(60) # <-- interval waktu setiap 1x looping saat scraping web. dalam detik. semakin sedikit waktu loopingnya semakin akurat, tetapi semakin berat kerja dari koding.
