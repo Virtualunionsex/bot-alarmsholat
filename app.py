@@ -4,7 +4,7 @@ import telepot
 import time, datetime
 
 URL = 'http://jadwalsholat.pkpu.or.id/' # ini alamat URL yang menyediakan jadwal sholat realtime, kita akan scraping page ini
-bot = telepot.Bot('1267590625:AAHJV6vU6Q5KxMBs6CAYcehsshNp1s56h9I') # <-- Ganti String value dengan token dari telegram bot / BotFather
+bot = telepot.Bot('5940961389:AAGD32HWrBCAEHF-qfzcXyoG_Wdd6P7fbGA') # <-- Ganti String value dengan token dari telegram bot / BotFather
 response = bot.getUpdates()
 
 print ('Memulai..')
